@@ -11,12 +11,30 @@ class CafeUtil {
         System.out.println(sum);
         return sum;
     }
-    
-    public double getOrderTotal(double[] prices) {
-        double sum =0
+
+    public double getOrderTotal(double[] items) {
+        double sum = 0;
+
         for (double total : items) {
-            sum+=total;
+            sum += total;
         }
-        return sum
+        return sum;
+
+    }
+    
+    public void displayMenu(ArrayList<String> menuItems) {
+
+        for (int id = 0; id < menuItems.size(); id++) {
+            System.out.println(id + menuItems.get(id));
+        }
+    }
+
+    public void addCustomer(ArrayList<String> customerList) {
+        System.out.println("Please enter your name:");
+        String userName = System.console().readLine();
+        System.out.printf("Hello, %s! ", userName);
+        System.out.printf("There are %s people ahead of you.\n", customerList.size());
+        customerList.add(userName);
+        System.out.println(customerList);
     }
 }
